@@ -58,7 +58,6 @@ for video_path in video_files:
         # temporal autocorr
         t_auto = temporal_autocorr(prev_gray, frame_gray)
 
-        # optical flow / motion
         motion_corr = float("nan")
         mag_mean = float("nan")
         if prev_gray is not None:
