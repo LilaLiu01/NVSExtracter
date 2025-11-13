@@ -9,13 +9,13 @@ class YOLOv10Detector:
         YOLOv10 detector wrapper
         """
         self.weights = weights
-        self.device = device
+        self.device = device if device else 'cpu'
         self.conf = conf
         self.iou = iou
         self.classes = classes
 
         # load model
-        self.model = YOLOv10(weights)
+        self.model = DetectMultiBackend(weights, device=self.device)
         self.model.to(device if device != "cpu" else "cpu")
         self.model.eval()
 
