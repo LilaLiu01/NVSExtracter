@@ -1,0 +1,40 @@
+name: yolov10
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+dependencies:
+  # --- Core Python ---
+  - python=3.10
+  - pip
+  - numpy
+  - pandas
+  - pyyaml
+  - opencv
+  - matplotlib
+  - tqdm
+  - eigen
+  - cmake
+  - ninja
+
+  # --- PyTorch & CUDA (adjust version to your system) ---
+  - pytorch
+  - torchvision
+  - torchaudio
+ #  - pytorch-cuda=12.1  # If using an NVIDIA GPU, remove if CPU-only
+
+  # --- Install YOLOv10 and related tools via pip ---
+  - pip:
+      - thop
+      - onnx
+      - onnxruntime
+      - scipy
+      - scikit-image
+      - scikit-learn
+      - filterpy
+      - lapx
+      - seaborn
+      - opencv-python
+      - opencv-python-headless
+      - git+https://github.com/THU-MIG/yolov10.git
